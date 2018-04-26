@@ -1,0 +1,23 @@
+﻿@using BusinessLayer
+@using Entities
+
+@{ 
+    KategoriManeger cm = new KategoriManeger();
+    List<Kategori> list = cm.List();
+}
+
+<p class="lead">Kategoriler</p>
+<div class="list-group">
+    <a href="/Home/Index" class="list-group-item"><span class="glyphicon glyphicon-arrow-down"></span>Tüm Kategori</a>
+
+    @foreach (Kategori kat in list)
+    {
+        <a href="/Kategori/Select/@kat.Id"title="@kat.Aciklama" class="list-group-item"><span class="glyphicon glyphicon-arrow-right"></span>@kat.Title</a>
+    }
+    @*@foreach (Kategori kat in list)
+    {
+        <a href="/Home/ByKategori/@kat.Id" title="@kat.Aciklama" class="list-group-item"><span class="glyphicon glyphicon-arrow-right"></span>@kat.Title</a>
+    }*@
+    
+   
+</div>

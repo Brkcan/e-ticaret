@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Entities.SepeteEkle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrununKategorisi.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Isim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BegeniSayısı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturulduguZaman)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DuzenlendigiTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DuzenleyenKullanici)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrununKategorisi.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Isim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BegeniSayısı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturulduguZaman)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuzenlendigiTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuzenleyenKullanici)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

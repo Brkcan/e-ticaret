@@ -1,0 +1,47 @@
+﻿@using Entities
+@model kullanici
+@{
+    ViewBag.Title = "Profiliniz";
+}
+
+<div class="container">
+    <div class="row">
+        <h2>@ViewBag.Title</h2>
+        <hr />
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+
+            <img src="~/Resim/@Model.ProfilefileImagename" class="img-circle" width="128" height="128" />
+        </div>
+        <div class="col-md-10">
+            <h3>@(Model.Adi + " " + Model.Soyad)</h3>
+            <br />
+            <h4><b>@Html.DisplayNameFor(model => model.KullaniciAdi) : </b>@Model.KullaniciAdi</h4>
+            <h4><b>@Html.DisplayNameFor(model => model.Email) : </b>@Model.Email</h4>
+            <br />
+            <h6><a href="#">More... </a></h6>
+        </div>
+        <div class="col-md-2 text-right">
+            <div class="btn-group">
+                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                    <span class="icon-cog icon-white"></span><span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="@Url.Action("EditProfile")">
+                            <span class="glyphicon glyphicon-edit">&nbsp;</span>Düzenle
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("DeleteProfile")"
+                                 
+                                <span class="glyphicon glyphicon-trash">&nbsp;</span>Sil
+                            </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

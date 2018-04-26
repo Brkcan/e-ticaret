@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Entities.kullanici>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KullaniciAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MailAktivite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KullaniciAdminMi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturulduguZaman)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DuzenlendigiTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DuzenleyenKullanici)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullaniciAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MailAktivite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullaniciAdminMi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OlusturulduguZaman)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuzenlendigiTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuzenleyenKullanici)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

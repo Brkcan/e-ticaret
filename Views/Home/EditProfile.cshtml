@@ -1,0 +1,81 @@
+﻿@using Entities
+@model kullanici
+@{
+    ViewBag.Title = "Profil Düzenle";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
+
+<div class="container">
+    <div class="row">
+        <h2>@ViewBag.Title</h2>
+        <hr />
+    </div>
+    <div class="row">
+        @using (Html.BeginForm("EditProfile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-horizontal">
+                <div class="col-md-3">
+                    <img src="~/Resim/@Model.ProfilefileImagename" class="img-circle" width="128" height="128" />
+
+                    <br /><br />
+
+                    <input type="file" name="ProfilImage" id="ProfilImage" class="form-control"/><br />
+                    <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                    <span><i>lütfen jpg,jpeg yada png formatı kullanın</i></span>
+
+                </div>
+                <div class="col-md-9">
+                    @Html.ValidationSummary(false)
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Adi, htmlAttributes : new { @class= "control-label colmd-2"})
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Adi ,new { htmlAttributes = new {@class="form-control"}})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Soyad, htmlAttributes: new { @class = "control-label colmd-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Soyad, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.KullaniciAdi, htmlAttributes: new { @class = "control-label colmd-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.KullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Sifre, htmlAttributes: new { @class = "control-label colmd-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label colmd-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Kaydet" class="btn btn-success"/>
+                            @Html.ActionLink("İptal", "ShowProfile", "Home", null, new { @class = "btn btn-default"})
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        
+        <div class="col-md-10">
+            <h3>@(Model.Adi + " " + Model.Soyad)</h3>
+            <br />
+            <h5><b>@Html.DisplayNameFor(model => model.KullaniciAdi) : </b>@Model.KullaniciAdi</h5>
+            <h5><b>@Html.DisplayNameFor(model => model.Email) : </b>@Model.Email</h5>
+            <br />
+            <h5><a href="#">More... </a></h5>
+        </div>
+    </div>
+</div>

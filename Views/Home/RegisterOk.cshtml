@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "";
+}
+
+<h2>RegisterOk</h2>
+
+<link href="~/Content/Login-Register.css" rel="stylesheet" />
+
+<section class="login-info">
+    <div class="container">
+        <div class="form-header">
+            <h1 class="text-center">Yönlendiriliyorsnuz</h1>
+        </div>
+        <div class="text-success">
+            <h2><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp; Kayıt Oldunuz...</h2>
+        <hr />
+            <p class="text-justify">
+                eposta gönderildi aktive et.
+
+            </p>
+        
+        </div>
+
+    </div>
+
+</section>
+<script>
+    $(function () {
+
+        setTimeout(function () {
+            window.location = "/Home/Index";
+        }, 3000);
+    });
+        
+</script>
+

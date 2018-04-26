@@ -1,0 +1,66 @@
+﻿@model Entities.SepeteEkle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SepeteEkle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrununKategorisi.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrununKategorisi.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BegeniSayısı)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BegeniSayısı)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlusturulduguZaman)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturulduguZaman)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DuzenlendigiTarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuzenlendigiTarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DuzenleyenKullanici)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DuzenleyenKullanici)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
